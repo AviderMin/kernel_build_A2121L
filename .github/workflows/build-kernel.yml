@@ -21,7 +21,7 @@ jobs:
 
       - name: Pull toolchain
         run: |
-          curl https://github.com/utziacre/tc-build/releases/download/20240312/ClangBuiltLinux.zip -RLO && unzip ClangBuildLinux.zip
+          curl https://github.com/utziacre/tc-build/releases/download/20240312/ClangBuiltLinux.zip -RLO && unzip ClangBuiltLinux.zip
 
       - name: Pull kernel source
         run: |
@@ -31,7 +31,7 @@ jobs:
         run: |
           export KBUILD_BUILD_USER="zclkkk"
           export KBUILD_BUILD_HOST="workspace"
-          export PATH=$GITHUB_WORKSPACE/ClangBuildLinux/bin:${PATH}
+          export PATH=$GITHUB_WORKSPACE/ClangBuiltLinux/bin:${PATH}
           args="                  ARCH=arm64 \
                                   O=../out \
                                   ${{ env.BUILD_ARGS }} \
